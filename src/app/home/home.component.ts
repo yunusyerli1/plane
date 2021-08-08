@@ -11,5 +11,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  scrollToForm(){}
+  scrollToForm(){
+    let element = document.getElementById("contact-form");
+     element?.scrollIntoView({behavior: "smooth"});
+  }
 }

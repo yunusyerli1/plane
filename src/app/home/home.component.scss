@@ -70,3 +70,14 @@
       height: 300px;
     }
   }
+
+
+  .world-image {
+    background-image: url("../../assets/img/world.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgba($color: #0067A0, $alpha: .03);
+  }
