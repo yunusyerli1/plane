@@ -1,0 +1,24 @@
+{
+    "header":{
+        "home":"Home",
+        "features":"Features"
+    },
+    "home":{
+        "bannerTitle":"Fire Fighting Is Our Job",
+        "bannerSubtitle":"Protect the Forest",
+        "bannerButton":"Contact Us",
+        "cardOneTitle":"Rent an Airplane",
+        "cardOneText":"As Protect Forest Aviation, we shape our flights completely in line with the wishes and needs of our valued customers. Our top priority is to offer you a unique flight experience at our domestic and international destinations. Bonair, which has been providing private aircraft charter and air ambulance services for more than 30 years with its qualified, trained and experienced staff, is always at your side to fly with you and meet your needs.",
+        "cardTwoTitle":"Buy an Airplane",
+        "cardTwoText":"We have 1 Falcon 7X type jet with 14 passenger capacity, 1 Falcon 8X type jet with 14 passenger capacity, 2 Agusta Westland 139 type helicopter with 9 passenger capacity and Cessna Grand Caravan type seaplane with 8 passenger capacity. There is a Cessna Grand Caravan type seaplane with a passenger capacity. There are Agusta Westland 139 type helicopters and a Cessna Caravan type seaplane with a capacity of 8 passengers.",
+        "cardThreeTitle":"Special Airplane For Fire",
+        "cardThreeText":"The private plane charter process can be started with a simple phone call or online flight request. After deciding on the right jet, depending on the route to be taken, the airline makes adjustments such as the landing permit of the destination country, airport ppr, slot permits, overpasses of the countries to be passed, and airport ground services. This is undesirable as these adjustments will have a direct impact on the flight and may even lead to the cancellation of the flight.",
+        "formTitle":"Rent an Airplane With One Click",
+        "formText":"It is very easy to rent a plane now. Thanks to the technology-oriented systems of Protect Forest Aviation, you can now easily perform services such as aircraft purchase and rental with one click.",
+        "name":"First and Last Name",
+        "phone":"Phone",
+        "email":"Email",
+        "city":"City",
+        "formButton":"Submit"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "header":{
+        "home":"Anasayfa",
+        "features":"Özellikler"
+    },
+    "home":{
+        "bannerTitle":"Yangınla Mücadele Bizim İşimiz",
+        "bannerSubtitle":"Ormanlarınızı Koruyun",
+        "bannerButton":"İletişime Geç",
+        "cardOneTitle":"Uçak Kirala",
+        "cardOneText":"Protect Forest Havacılık olarak, uçuşlarımızı tamamen siz değerli müşterilerimizin istek ve ihtiyaçları doğrultusunda şekillendirmekteyiz. Yurtiçi ve yurt dışı uçuş noktalarımızda size benzersiz bir uçuş deneyimi sunmak en önemli önceliğimizdir. Kaliteli, eğitimli ve deneyimli kadrosuyla 30 yılı aşkın süredir özel uçak kiralama ve hava ambulans hizmeti sunan Bonair, sizinle uçmak ve ihtiyaçlarınızı karşılamak için her zaman yanınızdadır.",
+        "cardTwoTitle":"Uçak Satın Al",
+        "cardTwoText":"Bünyemizde 14 yolcu kapasiteli 1 adet Falcon 7X tipi jet, 14 yolcu kapasiteli 1 adet Falcon 8X tipi jet, 9 yolcu kapasiteli 2 adet Agusta Westland 139 tipi helikopter ve 8 yolcu kapasiteli Cessna Grand Caravan tipi deniz uçagı bulunmaktadır.Agusta Westland 139 tipi helikopter ve 8 yolcu kapasiteli Cessna Grand Caravan tipi deniz uçagı bulunmaktadır.Agusta Westland 139 tipi helikopter ve 8 yolcu kapasiteli Cessna Caravan tipi deniz uçagı bulunmaktadır.",
+        "cardThreeTitle":"Yangınlara Özel Uçak",
+        "cardThreeText":"Özel uçak kiralama süreci basit bir telefon aramasıyla veya online uçuş talebiyle başlatılabilir. Doğru jete karar verildikten sonra, gidilecek rotaya bağlı olarak havayolu şirketi gidilecek ülkenin iniş izni, havalimanı ppr, slot izinleri, üzerinden geçilecek ülkelerin üst geçişler ve havalimanı yer hizmetleri gibi ayarlamalar yapar. Bu ayarlamalar, uçuşa direk etki edeceğinden, uçuşun iptaline bile yol açabileceğinden ki bu hiç istenmeyen bir durumdur.",
+        "formTitle":"Tek tıkla uçak kiralayın",
+        "formText":"Uçak kiralamak artık çok kolay. Protect Forest Havacılığın teknolojiye yön veren sistemleri sayesinde artık tek tıkla uçak satın almai kiralama gibi hizmetlerini kolayca yapabilirsiniz.",
+        "name":"Ad Soyad",
+        "phone":"Telefon",
+        "email":"Email",
+        "city":"Şehir",
+        "formButton":"Gönder"
+    }
+}

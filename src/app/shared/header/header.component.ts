@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as LanguageActions from '../../store/language/language.actions';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-header',
@@ -13,10 +14,17 @@ export class HeaderComponent implements OnInit {
   isLogin: boolean = false;
   language:Observable<string>;
 
-  constructor(private store:Store<{lang:string}>) { }
+  constructor( private translocoService: TranslocoService, 
+                private store:Store<{lang:string}>) { }
 
   ngOnInit(): void {
-    this.language = this.store.select('lang');
+    this.getLang();
+    
+    
+    
+  }
+  public async getLang(){
+    this.language = await this.store.select('lang');
     console.log(this.language);
     
   }
@@ -24,6 +32,7 @@ export class HeaderComponent implements OnInit {
     this.language= event.target.value;
     this.store.dispatch(new LanguageActions.ChangeLanguage(event.target.value));
     console.log(this.language);
+    this.translocoService.setActiveLang(event.target.value);
   }
 
 }

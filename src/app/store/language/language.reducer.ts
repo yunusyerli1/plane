@@ -18,8 +18,6 @@ export function languageReducer(state: Language = initialState, action: Language
         case LanguageActions.CHANGE_LANGUAGE:
             return state=action.payload;
   
-        // case 'ENGLISH':
-        //     return state = 'en';
     
         default:
             return 'tr';

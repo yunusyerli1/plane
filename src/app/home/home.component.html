@@ -1,5 +1,5 @@
 
-<div class="wrapper">
+<div class="wrapper" *transloco="let t">
     <div class="background-image w-100">
         <div class="image-opacity position-relative w-100 h-100">
             <div class="d-flex flex-column justify-content-center align-items-center h-100">
@@ -7,10 +7,10 @@
                 <div class="row h-100">
                 <div class="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
                     <div class="d-flex flex-column align-items-center justify-content-center h-100" style="text-align: center;">
-                    <h1 class="mb-4 fw-bold poppins">Yangınla Mücadele Bizim İşimiz</h1>
-                    <h2 class=" h3 fw-normal">Ormanlarınızı Koruyun</h2>
+                    <h1 class="mb-4 fw-bold poppins">{{ t('home.bannerTitle') }}</h1>
+                    <h2 class=" h3 fw-normal">{{ t('home.bannerSubtitle') }}</h2>
                     <div class="pt-5">
-                        <a class="btn btn-warning btn-lg rounded fs-18" (click)="scrollToForm()">İletişim Formu Doldurun</a>
+                        <a class="btn btn-warning btn-lg rounded fs-18" (click)="scrollToForm()">{{ t('home.bannerButton') }}</a>
                     </div>
                     </div>
                 </div>
@@ -27,8 +27,8 @@
               <div class="col mb-4">
                 <div class="card border-0" >
                   <div class="card-body p-5">
-                    <h5 class="card-title poppins fs-20 fw-bold">Uçak Kirala</h5>
-                    <p class="card-text">Protect Forest Havacılık olarak, uçuşlarımızı tamamen siz değerli müşterilerimizin istek ve ihtiyaçları doğrultusunda şekillendirmekteyiz. Yurtiçi ve yurt dışı uçuş noktalarımızda size benzersiz bir uçuş deneyimi sunmak en önemli önceliğimizdir. Kaliteli, eğitimli ve deneyimli kadrosuyla 30 yılı aşkın süredir özel uçak kiralama ve hava ambulans hizmeti sunan Bonair, sizinle uçmak ve ihtiyaçlarınızı karşılamak için her zaman yanınızdadır.</p>
+                    <h5 class="card-title poppins fs-20 fw-bold">{{ t('home.cardOneTitle') }}</h5>
+                    <p class="card-text">{{ t('home.cardOneText') }}</p>
                     </div>
                   <img src="../../assets/img/private-plane.jpeg" alt="plane" class="img-fluid">
                 </div>
@@ -36,8 +36,8 @@
               <div class="col  mb-4">
                 <div class="card border-0" >
                   <div class="card-body p-5">
-                    <h5 class="card-title poppins fs-20 fw-bold">Uçak Satın Al</h5>
-                    <p class="card-text">Bünyemizde 14 yolcu kapasiteli 1 adet Falcon 7X tipi jet, 14 yolcu kapasiteli 1 adet Falcon 8X tipi jet, 9 yolcu kapasiteli 2 adet Agusta Westland 139 tipi helikopter ve 8 yolcu kapasiteli Cessna Grand Caravan tipi deniz uçagı bulunmaktadır.Agusta Westland 139 tipi helikopter ve 8 yolcu kapasiteli Cessna Grand Caravan tipi deniz uçagı bulunmaktadır.Agusta Westland 139 tipi helikopter ve 8 yolcu kapasiteli Cessna Caravan tipi deniz uçagı bulunmaktadır.</p>   
+                    <h5 class="card-title poppins fs-20 fw-bold">{{ t('home.cardTwoTitle') }}</h5>
+                    <p class="card-text">{{ t('home.cardTwoText') }}</p>   
                   </div>
                   <img src="../../assets/img/special-plane.jpg" alt="plane"  class="img-fluid">
                 </div>
@@ -45,8 +45,8 @@
               <div class="col mb-4">
                 <div class="card border-0" >
                   <div class="card-body p-5">
-                    <h5 class="card-title poppins fs-20 fw-bold">Yangınlara Özel Uçak</h5>
-                    <p class="card-text">Özel uçak kiralama süreci basit bir telefon aramasıyla veya online uçuş talebiyle başlatılabilir. Doğru jete karar verildikten sonra, gidilecek rotaya bağlı olarak havayolu şirketi gidilecek ülkenin iniş izni, havalimanı ppr, slot izinleri, üzerinden geçilecek ülkelerin üst geçişler ve havalimanı yer hizmetleri gibi ayarlamalar yapar. Bu ayarlamalar, uçuşa direk etki edeceğinden, uçuşun iptaline bile yol açabileceğinden  ki bu hiç istenmeyen bir durumdur.</p>
+                    <h5 class="card-title poppins fs-20 fw-bold">{{ t('home.cardThreeTitle') }}</h5>
+                    <p class="card-text">{{ t('home.cardThreeText') }}</p>
                   </div>
                   <img src="../../assets/img/cl-215.jpg" alt="plane"  class="img-fluid">
                 </div>
@@ -58,29 +58,29 @@
            <div class="col-12 col-xl-10 offset-xl-1">
             <div class="row mb-5">
                 <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
-                    <h3>Tek tıkla uçak kiralayın</h3>
-                    <p>Uçak kiralamak artık çok kolay. Protect Forest Havacılığın teknolojiye yön veren sistemleri sayesinde artık tek tıkla uçak satın almai kiralama gibi hizmetlerini kolayca yapabilirsiniz.</p>
+                    <h3>{{ t('home.formTitle') }}</h3>
+                    <p>{{ t('home.formText') }}</p>
                 </div>
                 <div class="col-12 col-md-6" >
                     <form id="contact-form">
                         <div class="mb-3">
-                          <label for="username" class="form-label">Ad Soyad</label>
+                          <label for="username" class="form-label">{{ t('home.name') }}</label>
                           <input type="text" class="form-control rounded-pill" id="username" aria-describedby="username">
                         </div>
                         <div class="mb-3">
-                          <label for="phone" class="form-label">Telefon</label>
+                          <label for="phone" class="form-label">{{ t('home.phone') }}</label>
                           <input type="tel" class="form-control  rounded-pill" id="phone">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="email" class="form-label">{{ t('home.email') }}</label>
                             <input type="email" class="form-control rounded-pill" id="email">
                           </div>
                           <div class="mb-3">
-                            <label for="hometown" class="form-label">Memleket</label>
+                            <label for="hometown" class="form-label">{{ t('home.city') }}</label>
                             <input type="text" class="form-control rounded-pill" id="hometown">
                           </div>
                           <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary rounded-pill px-4">Gönder</button>
+                            <button type="submit" class="btn btn-primary rounded-pill px-4">{{ t('home.formButton') }}</button>
                           </div>
                         
                       </form>
