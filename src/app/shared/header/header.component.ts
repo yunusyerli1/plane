@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as LanguageActions from '../../store/language/language.actions';
 import { TranslocoService } from '@ngneat/transloco';
+import { Language } from 'src/app/store/language/language.model';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,8 @@ import { TranslocoService } from '@ngneat/transloco';
 export class HeaderComponent implements OnInit {
 
   isLogin: boolean = false;
-  language:Observable<string>;
+  actLang:Language;
+  language: string;
 
   constructor( private translocoService: TranslocoService, 
                 private store:Store<{lang:string}>) { }
@@ -20,18 +22,17 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.getLang();
     
-    
-    
   }
-  public async getLang(){
-    this.language = await this.store.select('lang');
-    console.log(this.language);
-    
-  }
+   getLang(){
+     this.store.select('lang').subscribe(value => {
+       this.language = value;
+     });
+     this.translocoService.setActiveLang(this.language);
+  
+   }
   changeLang(event){
-    this.language= event.target.value;
-    this.store.dispatch(new LanguageActions.ChangeLanguage(event.target.value));
-    console.log(this.language);
+    this.actLang= event.target.value;
+    this.store.dispatch(new LanguageActions.ChangeLanguage(this.actLang));
     this.translocoService.setActiveLang(event.target.value);
   }
 

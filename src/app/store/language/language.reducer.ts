@@ -3,12 +3,10 @@ import * as LanguageActions from './language.actions';
 
  
 const initialState: Language = {
-    lang:'tr'
+    lang:'en'
 }
 
 export function languageReducer(state: Language = initialState, action: LanguageActions.ChangeLanguage) {
-
-    //console.log(state);
 
     switch (action.type) {
   
@@ -20,6 +18,6 @@ export function languageReducer(state: Language = initialState, action: Language
   
     
         default:
-            return 'tr';
+            return state.lang;
       }
   }
