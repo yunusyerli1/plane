@@ -3,18 +3,20 @@ import * as LanguageActions from './language.actions';
 
  
 const initialState: Language = {
-    lang:'en'
+    lang:'tr'
 }
 
-export function languageReducer(state: Language = initialState, action: LanguageActions.ChangeLanguage) {
+export function languageReducer(state: Language = initialState, action: LanguageActions.SetLanguage) {
 
     switch (action.type) {
   
         // case LanguageActions.ADD_LANGUAGE:
         //     return [...state.lang, action.payload];
 
-        case LanguageActions.CHANGE_LANGUAGE:
-            return state=action.payload;
+        case LanguageActions.SET_LANGUAGE:
+            localStorage.setItem('language',JSON.stringify(action.payload));
+            
+            return action.payload;
   
     
         default:

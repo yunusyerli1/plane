@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { UtilsService } from 'src/app/services/utils.service';
+import { User } from 'src/app/store/user/user.model';
+import { Language } from 'src/app/store/language/language.model';
+import * as UserActions from '../../store/user/user.actions';
+import * as LanguageActions from '../../store/language/language.actions';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +19,7 @@ export class LoginComponent implements OnInit {
   messageError: string;
   currentAccount:any;
   isLoggin: boolean= false;
+  activeLang:Language;
 
 accounts:any = [
   {
@@ -47,10 +54,13 @@ accounts:any = [
   
   //accounts:any = [this.account1, this.account2, this.account3, this.account4];
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private utilsService: UtilsService,
+              private store:Store<{user:User}>) { }
 
   ngOnInit(): void {
     this.createUserLoginForm();
+    this.activeLang = JSON.parse(localStorage.getItem('language'));
   }
   createUserLoginForm() {
     const params = {
@@ -62,19 +72,28 @@ accounts:any = [
   login(){
     if (this.userLoginForm.valid) {
       this.messageError = "";
-      this.currentAccount = this.accounts.find(acc => acc.username === this.userLoginForm.value['username']);
+      this.currentAccount = JSON.parse(JSON.stringify(this.accounts.find(acc => acc.username === this.userLoginForm.value['username'])));
        if(this.currentAccount?.password === Number(this.userLoginForm.value['password'])){
-         this.isLoggin = true; 
+         this.isLoggin = true;
+         delete this.currentAccount['password'];
+         localStorage.setItem('user', JSON.stringify(this.currentAccount));
+         this.utilsService.userInfo = this.currentAccount;
+         this.store.dispatch(new LanguageActions.SetLanguage(this.activeLang ));
+         this.store.dispatch(new UserActions.Login(this.currentAccount));
+        
+         this.closeModal();
        }
-
-      console.log(this.currentAccount);
-      
-      //console.log(this.userLoginForm.value['username']);
     }else {
       this.messageError="Zorunlu alanları Doldurun";
     }
-    
-    
   }
+  public closeModal() {
+    const modal = document.getElementById('login-button');
+    modal.setAttribute("data-bs-dismiss", "modal");
+    modal.click();
+    event.preventDefault();
+    modal.removeAttribute("data-bs-dismiss");
+  }
+  
 
 }

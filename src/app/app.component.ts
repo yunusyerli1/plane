@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UtilsService } from './services/utils.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'plane';
+
+
+  constructor( private utilsService: UtilsService) {
+    //this.utilsService.getUser();
+   }
+
+ngOnInit(): void {
+  
+}
 }

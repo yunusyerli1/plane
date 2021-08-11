@@ -18,18 +18,26 @@
             
           </ul>
           <div class="d-flex align-items-center">
-            <a *ngIf="!isLogin" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" class="text-secondary text-decoration-none pe-4">Login</a>
-            <select   class="form-select border-0" aria-label="Default select example"  style="width: 80px;" (change)="changeLang($event)">
+            <a *ngIf="!this.user?.name" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" class="text-secondary text-decoration-none pe-4">Login</a>
+            <div class="dropdown" *ngIf="this.user">
+              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                {{this.user?.name}}
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">{{this.user?.email}}</a></li>
+                <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+              </ul>
+            </div>
+            <select   class="form-select border-0 ms-4" aria-label="Default select example"  style="width: 80px;" (change)="changeLang($event)">
               <option value="tr" selected >TR</option>
               <option value="en">EN</option>
             </select>
-            <select *ngIf="isLogin" class="form-select border-0" aria-label="Default select example" style="width: 180px;">
-              <option>Email</option>
-              <option>Logout</option>
-            </select>
+            <!-- <select *ngIf="user" class="form-select border-0" aria-label="Default select example" style="width: 180px;">
+              <option>this.user.email</option>  
+              <option ><a (click)="logout()">Logout</a></option>
+            </select> -->
             
           </div>
-          <!-- <div>{{actLang | async}}</div> -->
         </div>
         
       </div>

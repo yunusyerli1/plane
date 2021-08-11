@@ -14,6 +14,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { languageReducer } from './store/language/language.reducer';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
+import { userReducer } from './store/user/user.reducer';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { TranslocoRootModule } from './transloco/transloco-root.module';
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({ 
-      lang:languageReducer 
+      lang:languageReducer,
+      user:userReducer
   }),
   StoreDevtoolsModule.instrument({
     maxAge:10
