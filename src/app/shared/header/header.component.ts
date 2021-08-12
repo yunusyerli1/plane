@@ -55,7 +55,8 @@ export class HeaderComponent implements OnInit {
   logout(){
     localStorage.removeItem('user');
     this.utilsService.userInfo=null;
-    //this.store.dispatch(new UserActions.Logout({}));
+    this.store.dispatch(new UserActions.Logout(null));
+    
     
   }
 }

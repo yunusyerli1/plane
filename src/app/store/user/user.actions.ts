@@ -11,10 +11,11 @@ export class Login implements Action {
     constructor(public payload: User) {}
 }
 
-// export class Logout implements Action {
-//     readonly type = LOGOUT;
+ export class Logout implements Action {
+     readonly type = LOGOUT;
 
-//    constructor(public payload: any) {}
-// }
+    constructor(public payload: any) {
+    }
+ }
 
-export type Actions = Login;
+export type Actions = Login | Logout;
