@@ -26,23 +26,26 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.getLang();
     //this.user= this.utilsService.getUser();
-    
-    
   }
-  ngAfterContentInit(){
+  ngAfterContentInit() {
     this.store.select('user').subscribe(value => {
       this.user = value;
       console.log(value);
     });
-    console.log(this.user);
   }
+
    getLang(){
      this.store.select('lang').subscribe(value => {
        this.language = value;
      });
-     this.translocoService.setActiveLang(this.language);
-  
+     this.setLang();
    }
+
+   setLang(){
+    localStorage.setItem('language', JSON.stringify('tr'));
+    this.translocoService.setActiveLang(this.language);
+   }
+
   changeLang(event){
     this.actLang= event.target.value;
     this.store.dispatch(new LanguageActions.SetLanguage(this.actLang));

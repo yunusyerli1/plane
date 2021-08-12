@@ -47,12 +47,8 @@ accounts:any = [
     email:'mehmetturk@gmail.com',
     password: 444444
   }
-
-  
 ]
-   
-  
-  //accounts:any = [this.account1, this.account2, this.account3, this.account4];
+
 
   constructor(private formBuilder: FormBuilder,
               private utilsService: UtilsService,
@@ -60,7 +56,6 @@ accounts:any = [
 
   ngOnInit(): void {
     this.createUserLoginForm();
-    this.activeLang = JSON.parse(localStorage.getItem('language'));
   }
   createUserLoginForm() {
     const params = {
@@ -79,7 +74,7 @@ accounts:any = [
          localStorage.setItem('user', JSON.stringify(this.currentAccount));
          this.utilsService.userInfo = this.currentAccount;
          this.store.dispatch(new LanguageActions.SetLanguage(this.activeLang ));
-         this.store.dispatch(new UserActions.Login(this.currentAccount));
+        this.store.dispatch(new UserActions.Login(this.currentAccount));
         
          this.closeModal();
        }

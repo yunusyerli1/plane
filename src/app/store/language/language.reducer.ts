@@ -10,9 +10,7 @@ export function languageReducer(state: Language = initialState, action: Language
 
     switch (action.type) {
   
-        // case LanguageActions.ADD_LANGUAGE:
-        //     return [...state.lang, action.payload];
-
+        
         case LanguageActions.SET_LANGUAGE:
             localStorage.setItem('language',JSON.stringify(action.payload));
             

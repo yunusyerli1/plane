@@ -15,6 +15,7 @@ import { languageReducer } from './store/language/language.reducer';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
 import { userReducer } from './store/user/user.reducer';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { userReducer } from './store/user/user.reducer';
     FooterComponent,
     HomeComponent,
     NotFoundPageComponent,
-    LoginComponent
+    LoginComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

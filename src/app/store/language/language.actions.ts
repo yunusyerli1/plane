@@ -11,5 +11,3 @@ export class SetLanguage implements Action {
         
     }
 }
-
-//export type Actions = AddLanguage | ChangeLanguage;

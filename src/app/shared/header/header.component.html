@@ -15,7 +15,9 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" routerLink="/">{{ t('header.home') }}</a>
             </li>
-            
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="iletisim">{{ t('header.contact') }}</a>
+            </li>
           </ul>
           <div class="d-flex align-items-center">
             <a *ngIf="!this.user?.name" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" class="text-secondary text-decoration-none pe-4">Login</a>
