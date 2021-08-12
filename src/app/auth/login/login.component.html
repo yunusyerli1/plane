@@ -1,21 +1,21 @@
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" *transloco="let t">
     <div class="modal-dialog">
       <div class="modal-content">
         <form (ngSubmit)="login()" [formGroup]="userLoginForm">
           <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Giriş Yap</h5>
+            <h5 class="modal-title" id="loginModalLabel">{{ t('login.login') }}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
         
         <div class="modal-body">
           <div class="mb-3">
-            <label for="usernameLogin" class="form-label">Kullanıcı Adı</label>
+            <label for="usernameLogin" class="form-label">{{ t('login.username') }}</label>
             <input type="text" class="form-control" id="usernameLogin" aria-describedby="username" formControlName="username">
             <div *ngIf="userLoginForm.get('username').hasError('required')&&userLoginForm.get('username').dirty" class="invalid-feedback d-block">Lütfen kullanıcı adınızı giriniz.</div>
             <div *ngIf="userLoginForm.get('username').hasError('pattern')" class="invalid-feedback d-block">Lütfen alfabetik karakterler giriniz.</div>
           </div>
           <div class="mb-3">
-            <label for="passwordLogin" class="form-label">Şifre</label>
+            <label for="passwordLogin" class="form-label">{{ t('login.password') }}</label>
             <input type="password" class="form-control" id="passwordLogin" formControlName="password">
             <div *ngIf="userLoginForm.get('password').hasError('required') && userLoginForm.get('password').dirty" class="invalid-feedback d-block">Lütfen şifrenizi giriniz.</div>
             <div *ngIf="userLoginForm.get('password').hasError('minlength')" class="invalid-feedback d-block">Şifreniz en az 6 karakter olmalıdır.</div>
@@ -24,8 +24,8 @@
         </div>
       
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-          <button type="submit" class="btn btn-primary" id="login-button">Giriş Yap</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ t('login.closeButton') }}</button>
+          <button type="submit" class="btn btn-primary" id="login-button">{{ t('login.login') }}</button>
         </div>
       </form>
       </div>

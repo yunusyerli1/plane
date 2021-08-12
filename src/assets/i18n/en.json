@@ -1,9 +1,18 @@
 {
-    "header":{
+    "header": {
         "home":"Home",
-        "contact":"Contact Us"
+        "contact":"Contact Us",
+        "login":"Login",
+        "logout":"Logout"
     },
-    "home":{
+    "login": {
+        "login":"Login",
+        "logout":"Logout",
+        "username":"Username",
+        "password":"Password",
+        "closeButton":"Close"
+    },
+    "home": {
         "bannerTitle":"Fire Fighting Is Our Job",
         "bannerSubtitle":"Protect the Forest",
         "bannerButton":"Contact Us",
@@ -20,5 +29,25 @@
         "email":"Email",
         "city":"City",
         "formButton":"Submit"
+    },
+    "contact": {
+        "titleForm":"Contact Us",
+        "title":"Title ( Mr. / Mrs. )",
+        "name":"First and Last Name",
+        "email":"Email",
+        "phone":"Phone",
+        "country":"Country",
+        "description":"Your thoughts",
+        "buttonSend":"Send"
+    },
+    "country": {
+        "TR": "Turkey",
+        "US": "United States of America",
+        "GB": "United Kingdom",
+        "DE": "Germany",
+        "SE": "Sweden",
+        "KE": "Kenya",
+        "BR": "Brazil",
+        "ZW": "Zimbabwe"
     }
 }

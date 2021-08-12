@@ -1,9 +1,18 @@
 {
-    "header":{
+    "header": {
         "home":"Anasayfa",
-        "contact":"İletişim"
+        "contact":"İletişim",
+        "login":"Giriş Yap",
+        "logout":"Çıkış Yap"
     },
-    "home":{
+    "login": {
+        "login":"Giriş Yap",
+        "logout":"Çıkış Yap",
+        "username":"Kullanıcı Adı",
+        "password":"Şifre",
+        "closeButton":"Kapat"
+    },
+    "home": {
         "bannerTitle":"Yangınla Mücadele Bizim İşimiz",
         "bannerSubtitle":"Ormanlarınızı Koruyun",
         "bannerButton":"İletişime Geç",
@@ -20,5 +29,26 @@
         "email":"Email",
         "city":"Şehir",
         "formButton":"Gönder"
+    },
+    "contact": {
+        "titleForm":"İletişime Geç",
+        "title":"Ünvan ( Bay / Bayan )",
+        "name":"Ad Soyad",
+        "email":"Email",
+        "phone":"Telefon",
+        "country":"Ülke",
+        "description":"Düşünceleriniz",
+        "buttonSend":"Gönder"
+    },
+    "country": {
+        "TR": "Türkiye",
+        "US": "Amerika Birleşik Devletleri",
+        "GB": "Birleşik Krallık",
+        "DE": "Almanya",
+        "SE": "İsveç",
+        "KE": "Kenya",
+        "BR": "Brezilya",
+        "ZW": "Zimbabve"
     }
+
 }

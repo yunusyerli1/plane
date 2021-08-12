@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslocoService } from '@ngneat/transloco';
 import { Store } from '@ngrx/store';
 import { UtilsService } from '../services/utils.service';
 import { User } from '../store/user/user.model';
@@ -12,7 +13,9 @@ import { User } from '../store/user/user.model';
 export class ContactComponent implements OnInit {
 
   contactForm: FormGroup;
-  user:any;
+  errorMessage:string;
+  user:User;
+  countries:Array<any>=[];
 
   countryList :Array<any> = [
     { id: "TR", name: "Turkey" },
@@ -24,23 +27,35 @@ export class ContactComponent implements OnInit {
     { id: "BR", name: "Brazil" },
     { id: "ZW", name: "Zimbabwe" }
   ]
+  
 
   constructor(private formBuilder: FormBuilder,
     private utilsService: UtilsService,
+    private translocoService: TranslocoService,
     private store:Store<{user:User}>
     ) { }
 
   ngOnInit(): void {
     this.createContactForm();
-    this.user= this.store.select('user');
-    console.log(this.user);
-    
   }
+  ngAfterViewInit(){
+    this.store.select('user').subscribe(value => {
+      this.user = value;
+      this.createContactForm();
+      
+    });
+    this.translateMessages(this.countryList);
+  }
+  ngAfterContentChecked() {
+      this.translateMessages(this.countryList);
+ 
+  }
+
   createContactForm() {
     const params = {
       title: ["", Validators.required],
-      name: ["", [Validators.required, Validators.minLength(3)]],
-      email: ["", Validators.compose([Validators.required, Validators.maxLength(250), Validators.pattern(this.utilsService.emailPattern)])],
+      name: [this.user?.name ? this.user?.name : "", [Validators.required, Validators.minLength(3)]],
+      email: [this.user?.email ? this.user?.email : "", Validators.compose([Validators.required, Validators.maxLength(250), Validators.pattern(this.utilsService.emailPattern)])],
       phone: ["", [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(this.utilsService.onlyNumberPattern)]],
       country: [""],
       description:[""]
@@ -60,6 +75,25 @@ export class ContactComponent implements OnInit {
         description: value.description
       }
       console.log(params);
+      this.contactForm.reset();
+      this.errorMessage="";
+    } else {
+      this.errorMessage = "Lütfen zorunlu alanları doldurun.";
     }
+  }
+
+
+  translateMessages(message:any) {
+    this.countries.length=0;
+    message.forEach(element => {
+      let translatedMessage;
+      this.translocoService.selectTranslate(`country.${element.id}`).subscribe(translation => {
+        translatedMessage = translation;
+        this.countries.push({
+          id:element.id,
+          name:translatedMessage
+        });
+      });
+    });
   }
 }

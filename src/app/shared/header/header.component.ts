@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
   ngAfterContentInit() {
     this.store.select('user').subscribe(value => {
       this.user = value;
-      console.log(value);
     });
   }
 

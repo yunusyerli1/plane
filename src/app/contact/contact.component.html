@@ -1,4 +1,4 @@
-<div class="container-fluid my-5">
+<div class="container-fluid my-5" *transloco="let t">
     <div class="row row-cols-2">
         <div class="col">
             <img src="../../assets/img/contact.png" alt="" class="img-fluid h-100 w-100">
@@ -6,34 +6,34 @@
         <div class="col px-5">
             <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
                 <div class="d-flex justify-content-center align-items-center mb-5">
-                    <h2>İletişime Geç</h2>
+                    <h2>{{ t('contact.titleForm') }}</h2>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="title" placeholder="title"  formControlName="title">
-                    <label for="title">Ünvan ( Bay / Bayan )</label>
-                    <div class="invalid-feedback d-block" *ngIf="contactForm.get('title').hasError('required')&&contactForm.get('title').dirty">Lütfen ünvanınızı belirtiniz.</div>
+                    <label for="title">{{ t('contact.title') }} *</label>
+                    <div class="invalid-feedback d-block" *ngIf="(errorMessage && !contactForm.value.title) || contactForm.get('title').hasError('required')&&contactForm.get('title').dirty">Lütfen ünvanınızı belirtiniz.</div>
                 </div>
                 
 
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="name" placeholder="İsim Soyisim"  formControlName="name">
-                    <label for="name">İsim Soyisim</label>
-                    <div class="invalid-feedback d-block" *ngIf="contactForm.get('name').hasError('required')&&contactForm.get('name').dirty">Lütfen isim ve soyisminizi belirtiniz.</div>
+                    <label for="name">{{ t('contact.name') }} *</label>
+                    <div class="invalid-feedback d-block" *ngIf="(errorMessage && !contactForm.value.name) || contactForm.get('name').hasError('required')&&contactForm.get('name').dirty">Lütfen isim ve soyisminizi belirtiniz.</div>
                 </div>
                 
 
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="email" placeholder="name@example.com"  formControlName="email">
-                    <label for="email">Email</label>
-                    <div class="invalid-feedback d-block" *ngIf="contactForm.get('email').hasError('required')&&contactForm.get('email').dirty">Lütfen emailinizi belirtiniz.</div>
+                    <label for="email">{{ t('contact.email') }} *</label>
+                    <div class="invalid-feedback d-block" *ngIf="(errorMessage && !contactForm.value.email) || contactForm.get('email').hasError('required')&&contactForm.get('email').dirty">Lütfen emailinizi belirtiniz.</div>
                     <div class="invalid-feedback d-block" *ngIf="contactForm.get('email').hasError('pattern')">Emailiniz geçerli formatta değildir.</div>
                 </div>
                 
 
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="phone" placeholder="Telefon"  formControlName="phone">
-                    <label for="phone">Telefon</label>
-                    <div class="invalid-feedback d-block" *ngIf="contactForm.get('phone').hasError('required')&&contactForm.get('phone').dirty">Lütfen telefon numaranızı belirtiniz.</div>
+                    <label for="phone">{{ t('contact.phone') }} *</label>
+                    <div class="invalid-feedback d-block" *ngIf="(errorMessage && !contactForm.value.phone) || contactForm.get('phone').hasError('required')&&contactForm.get('phone').dirty">Lütfen telefon numaranızı belirtiniz.</div>
                     <div class="invalid-feedback d-block" *ngIf="contactForm.get('phone').hasError('pattern')">Telefon numarası sayısal karakkterlerden oluşmalıdır.</div>
                     <div class="invalid-feedback d-block" *ngIf="contactForm.get('phone').hasError('minlength') || contactForm.get('phone').hasError('maxlength')">Telefon numarası başında 0 olmadan 10 karakterden oluşmalıdır.</div>
                 </div>
@@ -41,18 +41,19 @@
 
                 <div class="form-floating mb-3">
                     <input type="search" name="modelsearch" class="form-control" id="search" list="countries"  formControlName="country">
-                    <label for="search">Ülke Ara</label>
+                    <label for="search">{{ t('contact.country') }}</label>
                     <datalist id="countries">
-                        <option value="{{country.name}}" *ngFor="let country of countryList">
+                        <option value="{{country.name}}" *ngFor="let country of countries">
                     </datalist>
                 </div>
 
                 <div class="form-floating mb-3">
                     <textarea class="form-control" placeholder="Leave a comment here" id="description" style="height: 200px" formControlName="description"></textarea>
-                    <label for="description">Açıklama</label>
+                    <label for="description">{{ t('contact.description') }}</label>
                 </div>
+                <div class="invalid-feedback d-block" *ngIf="errorMessage">{{this.errorMessage}}</div>
                 <div class="d-flex justify-content-end">
-                    <button class="btn btn-primary rounded-pill px-4" type="submit">Gönder</button>
+                    <button class="btn btn-primary rounded-pill px-4" type="submit">{{ t('contact.buttonSend') }}</button>
                 </div>
             </form>
         </div>
